@@ -11,6 +11,12 @@ features$newname <- gsub("-std\\(", "-Std(", features$V2)
 features$newname <- gsub("-mean\\(", "-Mean(", features$newname)
 features$newname <- gsub("[(),-]", "", features$newname)
 
+# Replace "BodyBody" with "Body".  The "BodyBody" names appear only in the names
+# for frequency-transformed columns and they should match the time-based columns.
+# No meaning is provided in the documentation for "BodyBody", which makes it more
+# likely that this was a mistake in processing.
+features$newname <- gsub("BodyBody", "Body", features$newname)
+
 # Identify the columns of X that we want to keep based on the name in features.
 keepers <- grep("-std\\(\\)|-mean\\(\\)", features$V2)
 
