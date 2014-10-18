@@ -24,7 +24,7 @@ subject column
 
 The value in the subject column for each row is an integer identifier for the subject who performed the activity when the observations were made that went into calculating the means for that row.
 
-measurement columns (66)
+measurement columns (66 columns)
 ------------------------
 
 The values in each of the 66 measurement columns are arithmetic means of the values in the original X_train and X_test data sets for each activity-subject combination.  More details on the processing of the downloaded data to obtain the means is available in the README.md file.
@@ -34,32 +34,32 @@ All values in these 66 columns are between -1 and +1 because the values in the o
 The measurement columns appear in the data set in the following order (reading left to right, first, then down):
 
  |  |  | 
---------------- | ------------ |------------
-tBodyAccMeanX        | tBodyAccMeanY | tBodyAccMeanZ
-tBodyAccStdX         | tBodyAccStdY | tBodyAccStdZ
-tGravityAccMeanX     | tGravityAccMeanY | tGravityAccMeanZ
-tGravityAccStdX      | tGravityAccStdY | tGravityAccStdZ
-tBodyAccJerkMeanX    | tBodyAccJerkMeanY | tBodyAccJerkMeanZ
-tBodyAccJerkStdX     | tBodyAccJerkStdY | tBodyAccJerkStdZ
-tBodyGyroMeanX       | tBodyGyroMeanY | tBodyGyroMeanZ
-tBodyGyroStdX        | tBodyGyroStdY | tBodyGyroStdZ
+-------------------- | ------------------ | ------------
+tBodyAccMeanX        | tBodyAccMeanY      | tBodyAccMeanZ
+tBodyAccStdX         | tBodyAccStdY       | tBodyAccStdZ
+tGravityAccMeanX     | tGravityAccMeanY   | tGravityAccMeanZ
+tGravityAccStdX      | tGravityAccStdY    | tGravityAccStdZ
+tBodyAccJerkMeanX    | tBodyAccJerkMeanY  | tBodyAccJerkMeanZ
+tBodyAccJerkStdX     | tBodyAccJerkStdY   | tBodyAccJerkStdZ
+tBodyGyroMeanX       | tBodyGyroMeanY     | tBodyGyroMeanZ
+tBodyGyroStdX        | tBodyGyroStdY      | tBodyGyroStdZ
 tBodyGyroJerkMeanX   | tBodyGyroJerkMeanY | tBodyGyroJerkMeanZ
-tBodyGyroJerkStdX    | tBodyGyroJerkStdY | tBodyGyroJerkStdZ
-tBodyAccMagMean      | tBodyAccMagStd
-tGravityAccMagMean   | tGravityAccMagStd
-tBodyAccJerkMagMean  | tBodyAccJerkMagStd
-tBodyGyroMagMean     | tBodyGyroMagStd
-tBodyGyroJerkMagMean | tBodyGyroJerkMagStd
-fBodyAccMeanX        | fBodyAccMeanY | fBodyAccMeanZ
-fBodyAccStdX         | fBodyAccStdY | fBodyAccStdZ
+tBodyGyroJerkStdX    | tBodyGyroJerkStdY  | tBodyGyroJerkStdZ
+tBodyAccMeanMag      | tBodyAccStdMag
+tGravityAccMeanMag   | tGravityAccStdMag
+tBodyAccJerkMeanMag  | tBodyAccJerkStdMag
+tBodyGyroMeanMag     | tBodyGyroStdMag
+tBodyGyroJerkMeanMag | tBodyGyroJerkStdMag
+fBodyAccMeanX        | fBodyAccMeanY     | fBodyAccMeanZ
+fBodyAccStdX         | fBodyAccStdY      | fBodyAccStdZ
 fBodyAccJerkMeanX    | fBodyAccJerkMeanY | fBodyAccJerkMeanZ
-fBodyAccJerkStdX     | fBodyAccJerkStdY | fBodyAccJerkStdZ
-fBodyGyroMeanX       | fBodyGyroMeanY | fBodyGyroMeanZ
-fBodyGyroStdX        | fBodyGyroStdY | fBodyGyroStdZ
-fBodyAccMagMean      | fBodyAccMagStd
-fBodyAccJerkMagMean  | fBodyAccJerkMagStd
-fBodyGyroMagMean     | fBodyGyroMagStd
-fBodyGyroJerkMagMean | fBodyGyroJerkMagStd
+fBodyAccJerkStdX     | fBodyAccJerkStdY  | fBodyAccJerkStdZ
+fBodyGyroMeanX       | fBodyGyroMeanY    | fBodyGyroMeanZ
+fBodyGyroStdX        | fBodyGyroStdY     | fBodyGyroStdZ
+fBodyAccMeanMag      | fBodyAccStdMag
+fBodyAccJerkMeanMag  | fBodyAccJerkStdMag
+fBodyGyroMeanMag     | fBodyGyroStdMag
+fBodyGyroJerkMeanMag | fBodyGyroJerkStdMag
 
 The names of the columns match those of the original data set except for the following adjustments:
 
@@ -70,12 +70,11 @@ The names of the columns match those of the original data set except for the fol
 ### Column name parts
 
 t or f  
-Body or Gravity
-Gyro or Acc
-Jerk or [nothing]
-Mag or [nothing]
-Mean or Std
-X, Y, Z, or [nothing]
+Body or Gravity  
+Gyro or Acc  
+Jerk or [nothing]  
+Mean or Std  
+X, Y, Z, or Mag  
 
 tGravityAcc-XYZ
 tGravityAccMag
