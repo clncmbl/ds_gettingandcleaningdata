@@ -27,9 +27,55 @@ The value in the subject column for each row is an integer identifier for the su
 measurement columns (66)
 ------------------------
 
-The values in each of the 66 measurement columns are arithmetic means of the values in the original X_train and X_test data sets for each activity-subject combination.
+The values in each of the 66 measurement columns are arithmetic means of the values in the original X_train and X_test data sets for each activity-subject combination.  More details on the processing of the downloaded data to obtain the means is available in the README.md file.
 
-All values are between -1 and +1 because the values in the original data sets, as provided, were normalized to that range.
+All values in these 66 columns are between -1 and +1 because the values in the original data sets, as provided, were normalized to that range.  Because they are normalized, the values lack units.
+
+The measurement columns appear in the data set in the following order (reading left to right, first, then down):
+
+ |  |  | 
+--------------- | ------------ |------------
+tBodyAccMeanX        | tBodyAccMeanY | tBodyAccMeanZ
+tBodyAccStdX         | tBodyAccStdY | tBodyAccStdZ
+tGravityAccMeanX     | tGravityAccMeanY | tGravityAccMeanZ
+tGravityAccStdX      | tGravityAccStdY | tGravityAccStdZ
+tBodyAccJerkMeanX    | tBodyAccJerkMeanY | tBodyAccJerkMeanZ
+tBodyAccJerkStdX     | tBodyAccJerkStdY | tBodyAccJerkStdZ
+tBodyGyroMeanX       | tBodyGyroMeanY | tBodyGyroMeanZ
+tBodyGyroStdX        | tBodyGyroStdY | tBodyGyroStdZ
+tBodyGyroJerkMeanX   | tBodyGyroJerkMeanY | tBodyGyroJerkMeanZ
+tBodyGyroJerkStdX    | tBodyGyroJerkStdY | tBodyGyroJerkStdZ
+tBodyAccMagMean      | tBodyAccMagStd
+tGravityAccMagMean   | tGravityAccMagStd
+tBodyAccJerkMagMean  | tBodyAccJerkMagStd
+tBodyGyroMagMean     | tBodyGyroMagStd
+tBodyGyroJerkMagMean | tBodyGyroJerkMagStd
+fBodyAccMeanX        | fBodyAccMeanY | fBodyAccMeanZ
+fBodyAccStdX         | fBodyAccStdY | fBodyAccStdZ
+fBodyAccJerkMeanX    | fBodyAccJerkMeanY | fBodyAccJerkMeanZ
+fBodyAccJerkStdX     | fBodyAccJerkStdY | fBodyAccJerkStdZ
+fBodyGyroMeanX       | fBodyGyroMeanY | fBodyGyroMeanZ
+fBodyGyroStdX        | fBodyGyroStdY | fBodyGyroStdZ
+fBodyAccMagMean      | fBodyAccMagStd
+fBodyAccJerkMagMean  | fBodyAccJerkMagStd
+fBodyGyroMagMean     | fBodyGyroMagStd
+fBodyGyroJerkMagMean | fBodyGyroJerkMagStd
+
+The names of the columns match those of the original data set except for the following adjustments:
+
+1. Replaced "mean" and "std" with "Mean" and "Std", respectively.
+2. Removed the following characters: "(", ")", "-"
+3. Replaced "BodyBody" with "Body".  The former was clearly a typo in naming in several of the original columns.
+
+### Column name parts
+
+t or f  
+Body or Gravity
+Gyro or Acc
+Jerk or [nothing]
+Mag or [nothing]
+Mean or Std
+X, Y, Z, or [nothing]
 
 tGravityAcc-XYZ
 tGravityAccMag
