@@ -27,7 +27,7 @@ The value in the subject column for each row is an integer identifier for the su
 measurement columns (66 columns)
 ------------------------
 
-The values in each of the 66 measurement columns are arithmetic means of the values in the original X_train and X_test data sets for each activity-subject combination.  More details on the processing of the downloaded data to obtain the means is available in the README.md file.
+The values in each of the 66 measurement columns are arithmetic means of the mean and standard deviation values in the original X_train and X_test data sets for each activity-subject combination.  More details on the processing of the downloaded data to obtain the means is available in the README.md file.
 
 All values in these 66 columns are between -1 and +1 because the values in the original data sets, as provided, were normalized to that range.  Because they are normalized, the values lack units.
 
@@ -66,34 +66,15 @@ The names of the columns match those of the original data set except for the fol
 1. Replaced "mean" and "std" with "Mean" and "Std", respectively.
 2. Removed the following characters: "(", ")", "-"
 3. Replaced "BodyBody" with "Body".  The former was clearly a typo in naming in several of the original columns.
+4. Replaced "MagMean" and "MagStd" with "MeanMag" and "StdMag" to make the name part ordering consistent with the ordering in the X-Y-Z column names.
 
 ### Column name parts
 
-t or f  
-Body or Gravity  
-Gyro or Acc  
-Jerk or [nothing]  
-Mean or Std  
-X, Y, Z, or Mag  
+1. t or f: "t" values indicate that the values are in the time domain (that is, the domain in which the signals were sampled), whereas "f" indicates values transformed into the frequency domain using a Fast Fourier Transform on the time-domain signals.
+2. Body or Gravity: "Gravity" indicates those normalized values of acceleration that reflect the force of gravity.  Otherwise, the values relate to the motion of the instrument (that is, the smart phone on the subject's body).
+3. Gyro or Acc: Angular velocity from gyroscope or linear acceleration from accelerometer.
+4. Jerk or [nothing]: "Jerk" indicates whether the normalized value comes from the derivative taken with respect to time of the angular velocity or the linear acceleration.
+5. Mean or Std: The values in the original X files are means and standard deviations of more raw signal values.  "Mean" indicates a mean, and "Std" indicates a standard deviation.  (This should not be confused with the fact that the measurement values in the output file for this project are all means of those more raw mean and standard deviation values grouped by activity and subject.)
+6. X, Y, Z, or Mag: This part of the column name indicates whether the value a component associated with the X, Y, or Z axis, or whether it reflects an overall magnitude ("Mag").  The magnitude values, in this case, come from the Euclidean norm (that is, the square root of the sum of the squares).  Be aware, however, that it is not possible to confirm that using the normalized X, Y, Z, and Mag values.
 
-tGravityAcc-XYZ
-tGravityAccMag
-
-tBodyAcc-XYZ
-tBodyAccMag
-fBodyAcc-XYZ
-fBodyAccMag
-
-tBodyAccJerk-XYZ
-tBodyAccJerkMag
-fBodyAccJerk-XYZ
-fBodyAccJerkMag
-
-tBodyGyro-XYZ
-tBodyGyroMag
-fBodyGyro-XYZ
-fBodyGyroMag
-
-tBodyGyroJerk-XYZ  (No frequency transformation available.)
-tBodyGyroJerkMag
-fBodyGyroJerkMag
+Additional information on the measurement values is available in the features_info.txt and the README.txt files available in the data download zip file.
