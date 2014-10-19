@@ -103,5 +103,5 @@ means <- by_activity_subject %>% summarise_each(funs(mean))
 # =====================================================================
 # This section of code writes the data frame to a file for the assignment upload.
 
-write.table(means, "gettingandcleaningout.txt", row.names=FALSE)
+write.table(means, "GettingAndCleaningProjectOutput.txt", row.names=FALSE)
 
